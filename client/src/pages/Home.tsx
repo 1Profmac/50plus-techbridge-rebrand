@@ -1,303 +1,340 @@
-/**
- * 50+ TechBridge Homepage - Using Actual Site Branding
- * 
- * Design: Navy Blue (#1e2749) + Bright Orange (#ff9500)
- * Typography: Playfair Display (headings) + Inter (body)
- * Layout: Matches current learnmoretechnologies.com structure
- * 
- * Key Messaging Changes (Anti-Ageism):
- * - "Your Second Act" → "Technology Amplifies Life"
- * - NO "seniors" or "older adults" language
- * - "Aging in place" → "Living independently"
- * - Focus on empowerment, not compensation for decline
- */
-
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Users, Target, DollarSign, Award, Heart, CheckCircle, HomeIcon } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle2, Users, Target, BookOpen, MessageCircle, Award, TrendingUp } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Navigation - Dark Navy Background */}
-      <nav className="fixed top-0 w-full bg-foreground z-50 border-b border-foreground">
-        <div className="container mx-auto flex items-center justify-between py-4">
-          <div className="text-2xl font-semibold text-primary">
-            Learnmoretechnologies
+      {/* Navigation */}
+      <nav className="border-b bg-white sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold">
+              50+
+            </div>
+            <span className="text-xl font-bold text-slate-900">TechBridge</span>
           </div>
-          <div className="hidden md:flex gap-8 items-center text-white">
-            <a href="#" className="hover:text-primary transition-colors">Start Here</a>
-            <a href="#" className="hover:text-primary transition-colors">Courses</a>
-            <a href="#" className="hover:text-primary transition-colors">For Partners</a>
-            <a href="#" className="hover:text-primary transition-colors">About</a>
-            <a href="#" className="hover:text-primary transition-colors">Resources</a>
-            <Button className="bg-primary hover:bg-primary/90 text-white rounded-lg px-6">
-              Join Now
-            </Button>
+          <div className="hidden md:flex gap-6">
+            <a href="#why" className="text-slate-600 hover:text-slate-900 font-medium">Why Us</a>
+            <a href="#learn" className="text-slate-600 hover:text-slate-900 font-medium">What You'll Learn</a>
+            <a href="#partners" className="text-slate-600 hover:text-slate-900 font-medium">Partners</a>
           </div>
+          <Button size="sm">Start Free Course</Button>
         </div>
       </nav>
 
-      {/* Hero Section - Dark Navy Background */}
-      <section className="relative pt-32 pb-20 bg-foreground text-white overflow-hidden">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="text-primary text-sm font-medium tracking-wider uppercase mb-4">
-                Technology Education for Adults 50+
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                Technology <span className="italic text-primary">Amplifies</span> Life
-              </h1>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
-                Begin your journey to digital confidence — designed for adults 50+. No experience needed.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-8 text-lg">
-                  Get Started Free →
-                </Button>
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-foreground rounded-lg px-8 text-lg">
-                  Learn More
-                </Button>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Free to join</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>No experience needed</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>1,200+ adults trained</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <img 
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/BQH80GEKGJen7Wkw6cwiSA/sandbox/VD2NlvDKWO5t5dHwyyPU9D-img-1_1771298049000_na1fn_aGVyby1jb21tdW5pdHktbGVhcm5pbmc.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvQlFIODBHRUtHSmVuN1drdzZjd2lTQS9zYW5kYm94L1ZEMk5sdkRLV081dDVkSHd5eVBVOUQtaW1nLTFfMTc3MTI5ODA0OTAwMF9uYTFmbl9hR1Z5YnkxamIyMXRkVzVwZEhrdGJHVmhjbTVwYm1jLmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=EqroAqFtxRaC8OrE4pjegR48xLHkSy51AmGcvSLEaFnFEMy1oCbmQE1lKpws75agqd1E5M42RwqZqlnlc451wAT1Et0N2WvzPjQwVJH7RTOHpbkaC03aMIoWzFQWAmA9G6Q-UdCsy~DuIXvx3h2dZa2VbdXAsnNZNHFQ09yzEcEjuxnq35pu~AohGwfaNUDbqeDlgGZ~ZddNVnfAkK0NE2fLYbedBX1pulK5F~-hIEqBJQy44igEZDtc3IhwKbZKXPvo1BlHHwrSZHiaNd-czKu8rCtwp~RDQcQCpc5NUJnQcjWGH6lPoih~O-DwyY2Ef1MowuWDIbrKMKJgins4dw__"
-                  alt="Diverse group of adults 50+ collaborating with technology"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section - Dark Navy Background */}
-      <section className="py-16 bg-foreground border-t border-white/10">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-                1188+
-              </div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Lives Changed</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-                84%
-              </div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Completion Rate</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-                44
-              </div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Partner Sites</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-                91%
-              </div>
-              <div className="text-sm text-white/70 uppercase tracking-wider">Feel More Confident</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-primary text-sm font-medium tracking-wider uppercase mb-4">
-              Why Learn More Technologies
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-              Learning Built <span className="italic text-primary">For You</span>
-            </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Traditional tech training fails adults 50+. We built something different — patient, practical, and designed for real life.
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              You've Adapted to Every Tech Shift.
+              <br />
+              <span className="text-orange-400">Now Prove Ageism Wrong.</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-slate-300 font-serif italic">
+              Decades of wisdom. Tomorrow's tools.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <Users className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Peer-to-Peer Learning
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Adults 50+ teach each other. No condescending instructors. Just patient, relatable guidance from people who get it.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <Target className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Real-World Focus
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Every lesson solves a real problem — healthcare, online safety, connecting with family.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <DollarSign className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Free & Accessible
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Our Foundation Digital Skills course is completely free. No barriers, no credit cards, no excuses.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <Award className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Train-the-Trainer
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  We train students to become teachers — creating a ripple effect across communities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <Heart className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Community, Not Just Classes
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Graduates stay connected through online forums, monthly meetups, and ongoing peer support.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-border hover:border-primary transition-colors">
-              <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <HomeIcon className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                  Living Independently
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Technology makes independent living possible — telehealth, smart homes, safety tools, and staying connected.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Light Gray Background */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto text-center">
-          <div className="text-primary text-sm font-medium tracking-wider uppercase mb-4">
-            Ready to Begin?
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Join 1,200+ Adults <span className="italic text-primary">Already Thriving</span>
-          </h2>
-          <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Start your free digital skills course today. No experience needed.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-8 text-lg">
-              Start My Free Lesson <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-white rounded-lg px-8 text-lg">
-              Partner With Us
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer - Dark Navy Background */}
-      <footer className="py-12 bg-foreground text-white">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-2xl font-semibold mb-4 text-primary">
-                Learnmoretechnologies
+            <div className="prose prose-lg prose-invert mx-auto mb-10 text-slate-200">
+              <p className="text-lg">
+                From typewriters to personal computers. Dial-up to smartphones. You've learned every technology that mattered—because you had to.
+              </p>
+              <p className="text-lg">
+                Now the world says you're too old for AI. That you can't keep up. That you're obsolete.
+              </p>
+              <p className="text-lg font-bold text-white">
+                They're wrong. And this free AI and digital skills course will prove it.
+              </p>
+              <p className="text-lg">
+                Join 1,200+ adults 50+ who refuse to be invisible. Learn the skills that keep you employable, independent, and relevant—not because it's easy, but because you've earned the right to stay in the game.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6">
+                Start Free Course
+              </Button>
+              <Button size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20 text-lg px-8 py-6">
+                See What You'll Learn
+              </Button>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-300">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>Free to join</span>
               </div>
-              <p className="text-sm text-white/70">
-                Technology confidence for adults 50+ who want to stay connected, healthy, and safe in the digital world.
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>1,200+ adults 50+ trained</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>85% completion rate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>Trusted by 45+ organizations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why 50+ TechBridge Section */}
+      <section id="why" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900">
+            Traditional Tech Training Fails Adults 50+.
+          </h2>
+          <p className="text-xl text-center mb-16 text-slate-600">Here's Why We Don't.</p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <Users className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">No Condescension. Just Real Talk.</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Adults 50+ teach each other. No 25-year-old instructors who've never faced age discrimination. No judgment. Just patient, relatable guidance from people who understand what it's like to be written off.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <Target className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">This Isn't a Hobby. It's Survival.</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Learn the AI and digital skills that keep you employable, independent, and relevant. Master telehealth, online income, job applications, and the tools that determine whether you thrive or get left behind.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <BookOpen className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">We Don't Teach "Technology for Technology's Sake."</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Every lesson solves a real problem: accessing healthcare, staying safe online, earning income, or connecting with family. No fluff. No theory. Just skills that matter.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <MessageCircle className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">You're Not Alone in This Fight.</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Learning continues beyond the classroom. Our graduates stay connected through online forums, monthly meetups, and ongoing support. We're building a movement, not just running courses.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <Users className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">Become the Teacher.</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  We don't just teach students—we train them to become teachers. One cohort can impact hundreds of others. Your experience becomes someone else's lifeline.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-slate-200 hover:border-orange-400 transition-colors">
+              <CardHeader>
+                <Award className="w-12 h-12 text-orange-500 mb-4" />
+                <CardTitle className="text-xl">85% Completion Rate</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Far above the industry average of 30%. Because our model meets people where they are. No shame. No speed. No assumptions that you should already know this. Just results.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Learn Section */}
+      <section id="learn" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900">
+            AI Skills That Keep You Employable in the New Economy
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Digital Foundations</h3>
+              <p className="text-slate-600">
+                Navigate smartphones, tablets, and computers with confidence. Manage passwords and accounts without getting locked out. Troubleshoot common tech problems yourself—no more waiting for help.
               </p>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-primary transition-colors">Start Here</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Our Courses</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">For Partners</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Resources</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Our Courses</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-primary transition-colors">Digital Health & Wellness</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Staying Connected</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Online Safety</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Everyday Tech</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Free Foundation Course</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Get in Touch</h4>
-              <p className="text-sm text-white/70 mb-4">
-                hello@learnmoretechnologies.com
+
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">AI Fluency</h3>
+              <p className="text-slate-600">
+                Use ChatGPT, Claude, and other AI tools for real tasks. Automate repetitive work and save hours every week. Understand what AI can (and can't) do for you—and how to use it without fear.
               </p>
-              <Button className="bg-primary hover:bg-primary/90 text-white rounded-lg">
-                Partner With Us
+            </div>
+
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Online Safety</h3>
+              <p className="text-slate-600">
+                Spot scams, phishing, and fraud before they hurt you. Protect your identity and financial information. Navigate social media without falling for misinformation or getting exploited.
+              </p>
+            </div>
+
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Healthcare Access</h3>
+              <p className="text-slate-600">
+                Use telehealth and patient portals confidently. Manage prescriptions and appointments online. Access health information when you need it—without calling the office three times.
+              </p>
+            </div>
+
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Staying Connected</h3>
+              <p className="text-slate-600">
+                Video call with family without tech anxiety. Use social media to build community, not isolation. Text, email, and message like someone who belongs in 2026.
+              </p>
+            </div>
+
+            <div className="p-6 border-l-4 border-orange-500 bg-slate-50">
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Earning Income Online</h3>
+              <p className="text-slate-600">
+                Find remote work and freelance opportunities. Use platforms like Upwork, Fiverr, and LinkedIn to get hired. Get paid for your expertise and experience—not dismissed because of your age.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 to-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            The Numbers Speak for Themselves
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-orange-400 mb-2">1,200+</div>
+              <div className="text-lg font-semibold mb-2">Lives Changed</div>
+              <p className="text-sm text-slate-300">Adults 50+ trained since 2023—and still using their skills 6 months later.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-5xl font-bold text-orange-400 mb-2">85%</div>
+              <div className="text-lg font-semibold mb-2">Completion Rate</div>
+              <p className="text-sm text-slate-300">Far above the industry average of 30%. Because we don't treat you like a child.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-5xl font-bold text-orange-400 mb-2">45</div>
+              <div className="text-lg font-semibold mb-2">Partner Sites</div>
+              <p className="text-sm text-slate-300">Libraries, community centers, and workforce agencies trust us to deliver results.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-5xl font-bold text-orange-400 mb-2">92%</div>
+              <div className="text-lg font-semibold mb-2">Feel More Confident</div>
+              <p className="text-sm text-slate-300">Report increased digital confidence and reduced tech anxiety.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Ageism Problem Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-slate-900">
+            Why This Matters: The Real Cost of Digital Exclusion
+          </h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg mx-auto mb-12 text-slate-700">
+              <p>
+                Adults 50+ face systematic barriers in the digital economy. Age discrimination in hiring is rampant. AI systems are trained on bias that favors youth. And the myth that "you can't teach an old dog new tricks" keeps millions of capable people sidelined.
+              </p>
+              <p>
+                The result? Economic insecurity. Social isolation. Loss of independence. And a society that wastes the wisdom and experience of its most capable citizens.
+              </p>
+              <p className="font-bold text-slate-900">
+                50+ TechBridge exists to fight back. We're not just teaching technology—we're proving that age is not a barrier to learning, earning, or thriving in the digital world.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="p-6 bg-white rounded-lg shadow-sm">
+                <div className="text-5xl font-bold text-orange-500 mb-2">64%</div>
+                <p className="text-slate-700">of workers 50+ report age discrimination in hiring</p>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow-sm">
+                <div className="text-5xl font-bold text-orange-500 mb-2">40%</div>
+                <p className="text-slate-700">of adults 50+ lack basic digital skills needed for modern jobs</p>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow-sm">
+                <div className="text-5xl font-bold text-orange-500 mb-2">80%</div>
+                <p className="text-slate-700">want to live independently—but need tech skills to do it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              You've Proven Them Wrong Before. Do It Again.
+            </h2>
+            <p className="text-xl mb-4 text-slate-300">
+              Every technology shift, they said you couldn't adapt. Every time, you proved them wrong.
+            </p>
+            <p className="text-xl mb-8 text-slate-300">
+              AI is just the next one. And you're not too old to master it.
+            </p>
+            <p className="text-lg mb-10 text-slate-200">
+              Join 1,200+ adults 50+ who refuse to be invisible. Start learning today—free, at your pace, with people who understand.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6">
+                Start Free Course
               </Button>
-              <Button className="mt-2 bg-primary hover:bg-primary/90 text-white rounded-lg w-full">
-                Join Free Today
+              <Button size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20 text-lg px-8 py-6">
+                See Partner Options
               </Button>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-            <p>© 2026 Learnmoretechnologies. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Use</a>
-              <a href="#" className="hover:text-primary transition-colors">Accessibility</a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-300 py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold">
+                50+
+              </div>
+              <span className="text-2xl font-bold text-white">TechBridge</span>
             </div>
+            <p className="text-lg font-semibold text-white mb-2">Fighting ageism through technology education.</p>
+            <p className="text-sm italic mb-4 text-slate-400">Decades of wisdom. Tomorrow's tools.</p>
+            <p className="text-sm mb-6">
+              We believe age should never be a barrier to digital independence, economic opportunity, or social connection. 50+ TechBridge is proving it—one learner at a time.
+            </p>
+            <p className="text-sm text-slate-400">
+              Contact: hello@learnmoretechnologies.com
+            </p>
           </div>
         </div>
       </footer>
