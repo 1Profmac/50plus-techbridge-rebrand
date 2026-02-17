@@ -40,80 +40,80 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
 }
 
-/* Organic Futurism Color Palette: Warm earth tones meet digital gradients */
+/* LearnMoreTechnologies.com Brand Colors: Navy Blue + Bright Orange */
 :root {
-  --primary: oklch(0.62 0.15 35); /* Terracotta #d4735e */
+  --primary: oklch(0.65 0.19 60); /* Bright Orange #ff9500 */
   --primary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.55 0.12 320); /* Deep plum */
+  --sidebar-primary: oklch(0.65 0.19 60);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --chart-1: oklch(0.75 0.08 140); /* Sage */
-  --chart-2: oklch(0.62 0.15 35); /* Terracotta */
-  --chart-3: oklch(0.55 0.12 320); /* Plum */
-  --chart-4: oklch(0.48 0.10 310); /* Deep plum */
-  --chart-5: oklch(0.70 0.10 50); /* Warm peach */
-  --radius: 1.5rem; /* Generous rounding for organic feel */
-  --background: oklch(0.98 0.005 80); /* Warm off-white */
-  --foreground: oklch(0.25 0.02 320); /* Deep plum-gray */
+  --chart-1: oklch(0.65 0.19 60);
+  --chart-2: oklch(0.28 0.06 255);
+  --chart-3: oklch(0.75 0.10 60);
+  --chart-4: oklch(0.50 0.15 60);
+  --chart-5: oklch(0.35 0.06 255);
+  --radius: 0.75rem; /* Moderate rounding like current site */
+  --background: oklch(0.98 0 0); /* White */
+  --foreground: oklch(0.28 0.06 255); /* Dark Navy #1e2749 */
   --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.25 0.02 320);
+  --card-foreground: oklch(0.28 0.06 255);
   --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.25 0.02 320);
-  --secondary: oklch(0.92 0.02 140); /* Soft sage */
-  --secondary-foreground: oklch(0.30 0.02 320);
-  --muted: oklch(0.94 0.01 80);
-  --muted-foreground: oklch(0.50 0.02 320);
-  --accent: oklch(0.70 0.08 140); /* Sage accent */
-  --accent-foreground: oklch(0.25 0.02 320);
+  --popover-foreground: oklch(0.28 0.06 255);
+  --secondary: oklch(0.95 0.005 255); /* Light gray */
+  --secondary-foreground: oklch(0.28 0.06 255);
+  --muted: oklch(0.93 0.005 255);
+  --muted-foreground: oklch(0.50 0.03 255);
+  --accent: oklch(0.65 0.19 60); /* Orange accent */
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0.01 80);
-  --input: oklch(0.88 0.01 80);
-  --ring: oklch(0.62 0.15 35);
-  --sidebar: oklch(0.98 0.005 80);
-  --sidebar-foreground: oklch(0.25 0.02 320);
-  --sidebar-accent: oklch(0.92 0.02 140);
-  --sidebar-accent-foreground: oklch(0.25 0.02 320);
-  --sidebar-border: oklch(0.88 0.01 80);
-  --sidebar-ring: oklch(0.62 0.15 35);
+  --border: oklch(0.88 0.005 255);
+  --input: oklch(0.88 0.005 255);
+  --ring: oklch(0.65 0.19 60);
+  --sidebar: oklch(0.28 0.06 255);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.35 0.06 255);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.35 0.06 255);
+  --sidebar-ring: oklch(0.65 0.19 60);
 }
 
 .dark {
-  --primary: oklch(0.62 0.15 35);
+  --primary: oklch(0.65 0.19 60);
   --primary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.55 0.12 320);
+  --sidebar-primary: oklch(0.65 0.19 60);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --background: oklch(0.18 0.02 320);
-  --foreground: oklch(0.92 0.01 80);
-  --card: oklch(0.22 0.02 320);
-  --card-foreground: oklch(0.92 0.01 80);
-  --popover: oklch(0.22 0.02 320);
-  --popover-foreground: oklch(0.92 0.01 80);
-  --secondary: oklch(0.28 0.02 320);
-  --secondary-foreground: oklch(0.85 0.01 80);
-  --muted: oklch(0.30 0.02 320);
-  --muted-foreground: oklch(0.65 0.01 80);
-  --accent: oklch(0.55 0.12 320);
-  --accent-foreground: oklch(0.92 0.01 80);
+  --background: oklch(0.18 0.06 255);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.22 0.06 255);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.22 0.06 255);
+  --popover-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.28 0.06 255);
+  --secondary-foreground: oklch(0.85 0 0);
+  --muted: oklch(0.30 0.06 255);
+  --muted-foreground: oklch(0.65 0.03 255);
+  --accent: oklch(0.65 0.19 60);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.60 0.20 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.30 0.02 320);
-  --input: oklch(0.30 0.02 320);
-  --ring: oklch(0.62 0.15 35);
-  --chart-1: oklch(0.70 0.08 140);
-  --chart-2: oklch(0.62 0.15 35);
-  --chart-3: oklch(0.55 0.12 320);
-  --chart-4: oklch(0.48 0.10 310);
-  --chart-5: oklch(0.70 0.10 50);
-  --sidebar: oklch(0.22 0.02 320);
-  --sidebar-foreground: oklch(0.92 0.01 80);
-  --sidebar-accent: oklch(0.28 0.02 320);
-  --sidebar-accent-foreground: oklch(0.92 0.01 80);
-  --sidebar-border: oklch(0.30 0.02 320);
-  --sidebar-ring: oklch(0.62 0.15 35);
+  --border: oklch(0.30 0.06 255);
+  --input: oklch(0.30 0.06 255);
+  --ring: oklch(0.65 0.19 60);
+  --chart-1: oklch(0.65 0.19 60);
+  --chart-2: oklch(0.45 0.06 255);
+  --chart-3: oklch(0.75 0.10 60);
+  --chart-4: oklch(0.50 0.15 60);
+  --chart-5: oklch(0.35 0.06 255);
+  --sidebar: oklch(0.22 0.06 255);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.28 0.06 255);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.30 0.06 255);
+  --sidebar-ring: oklch(0.65 0.19 60);
 }
 
 @layer base {
@@ -169,24 +169,24 @@
     }
   }
 
-  /* Organic blob shapes for decorative elements */
-  .blob {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: blob-morph 8s ease-in-out infinite;
+  /* Hand-drawn button effect like current site */
+  .btn-sketch {
+    position: relative;
+    overflow: visible;
   }
 
-  @keyframes blob-morph {
-    0%, 100% {
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    }
-    25% {
-      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-    }
-    50% {
-      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-    }
-    75% {
-      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-    }
+  .btn-sketch::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: currentColor;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.3;
   }
 }
