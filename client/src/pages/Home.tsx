@@ -268,6 +268,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Book Showcase Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Book Cover */}
+              <div className="flex justify-center">
+                <img 
+                  src="https://private-us-east-1.manuscdn.com/sessionFile/BQH80GEKGJen7Wkw6cwiSA/sandbox/Uu8z5ejBjW5xaUU1oDYykN-img-1_1771562490000_na1fn_NTBwbHVzLXRlY2hicmlkZ2UtYm9vay1jb3Zlci1wcm9mZXNzb3I.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvQlFIODBHRUtHSmVuN1drdzZjd2lTQS9zYW5kYm94L1V1OHo1ZWpCalc1eGFVVTFvRFl5a04taW1nLTFfMTc3MTU2MjQ5MDAwMF9uYTFmbl9OVEJ3YkhWekxYUmxZMmhpY21sa1oyVXRZbTl2YXkxamIzWmxjaTF3Y205bVpYTnpiM0kucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=GSa3s-bXc6c5e7ADJPSHEeY0mGRb178lDxsnRcIQ2-i9EciwQDLKod3kGXnbu9KiJTNIsl3499ibvWERTRHiqDvbFY0SA02DjpVI9FJpr~z4nU8VQfOZRB1Nm~QDeKvPhSomuvkJ3iFx5slpVdcg2r0zFlEV18HdIi-qAafC3zBrEfiiFxEA9-X-VtUosxZZAQxIt36pGmOgLI3J7v-t9r1uTot4nJTxEStq7JVY62dv3mcm63Nl6HjbQhm-jefh5l90JviFoog0R~FG5Tk1OJYCetLFmpfmojJ9FGHJxDiXf54qxoh-7f3Hu8yF8ut-11q8w9mqxoFuX-WyKb1aVw__"
+                  alt="50+ TechBridge Book Cover"
+                  className="w-full max-w-md rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Book Description */}
+              <div>
+                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold mb-6">
+                  📚 Coming Soon
+                </div>
+                <h2 className="text-5xl font-bold mb-6">
+                  50+ TechBridge
+                </h2>
+                <p className="text-2xl text-primary font-semibold mb-6 italic">
+                  A Guide to Using Tech to Start Over After 50
+                </p>
+                <div className="prose prose-lg max-w-none mb-8">
+                  <p className="text-lg leading-relaxed">
+                    This isn't just a book about technology. It's a roadmap for transformation.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Inside, you'll discover how to use AI, digital platforms, and modern tools to reclaim your identity, discover your purpose, build resilience, and create a lasting legacy—all while fighting back against ageism.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Whether you're starting a business, building an online platform, or stepping onto the speaking stage, this book will show you how technology bridges the gap between where you are and where you want to be.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+                    Pre-Order Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <p className="text-sm text-muted-foreground">
+                    By Professor Brian McKinney
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* My Story Section */}
       <section id="about" className="py-24 bg-muted/30">
         <div className="container">
