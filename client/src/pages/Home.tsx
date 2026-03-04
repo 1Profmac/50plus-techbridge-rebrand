@@ -348,7 +348,7 @@ export default function Home() {
                   Then I realized: I don't need their permission. And neither do you.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  I built 50+ TechBridge to fight ageism through technology education. I've trained 1,200+ adults 50+ to master AI and digital skills. I've proven that age is not a barrier to learning, earning, or thriving.
+                  I built 50+ TechBridge to fight ageism through technology education. Today, a global community of thousands of adults 50+ are mastering AI, mobile, and digital skills — proving every day that age is not a barrier to learning, earning, or thriving.
                 </p>
                 <p className="text-lg leading-relaxed">
                   Now, I'm stepping into my next calling: helping 50+ entrepreneurs and aspiring speakers build movements, write books, and get to the front of the room.
